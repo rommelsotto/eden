@@ -1,3 +1,7 @@
 First Name,Last Name,Email,Password,Role,Organisation
 Admin,Admin,admin@hims.com,123456,ADMIN,
 User,User,user@hims.com,123456,,
+<<<<<<< HEAD
+Super,Super,super@hims.com,123456,ADMIN,
+=======
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2

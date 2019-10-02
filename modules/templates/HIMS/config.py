@@ -14,6 +14,7 @@ def config(settings):
     T = current.T
     settings.base.system_name = T("HI Information Management System")
     settings.base.system_name_short = T("HIMS")
+    settings.base.theme_base = "default"
     settings.ui.menu_logo = "/static/themes/HIMS/img/logo_small.png"
 
     # Pre-Populate
@@ -163,6 +164,7 @@ def config(settings):
     # Default Country Code for telephone numbers
     #settings.L10n.default_country_code = 1
     # Make last name in person/user records mandatory
+    #settings.L10n.mandatory_lastname = True
     settings.L10n.mandatory_lastname = True
     # Configure the list of Religions
     settings.L10n.religions = {"none": T("none"),
@@ -363,7 +365,8 @@ def config(settings):
     # 7: Apply Controller, Function, Table ACLs and Entity Realm + Hierarchy
     # 8: Apply Controller, Function, Table ACLs, Entity Realm + Hierarchy and Delegations
     #
-    settings.security.policy = 5
+
+    settings.security.policy = 7
 
     # Ownership-rule for records without owner:
     # True = not owned by any user (strict ownership, default)
@@ -415,7 +418,7 @@ def config(settings):
     # Enable this to show pivot table options form by default
     #settings.ui.hide_report_options = False
     # Uncomment to show created_by/modified_by using Names not Emails
-    settings.ui.auth_user_represent = "name"
+    #settings.ui.auth_user_represent = "name"
     # Uncomment to control the dataTables layout: https://datatables.net/reference/option/dom
     # Default:
     #settings.ui.datatables_dom = "fril<'dataTable_table't>pi"
@@ -462,7 +465,7 @@ def config(settings):
     """
     # Uncomment if this deployment exposes public data sets
     settings.sync.data_repository = True
-    
+
     """
         ========================================================================================
         Asset
@@ -581,7 +584,7 @@ def config(settings):
     #settings.br.assistance_activity_autolink = True
     # Disable tracking of effort (=hours spent) for assistance measures
     #settings.br.assistance_track_effort = False
-    
+
     """
         ========================================================================================
         CMS
@@ -627,7 +630,7 @@ def config(settings):
     # Uncomment to use Tags for Shelters
     #settings.cr.tags = True
     # Uncomment to generate tasks from shelter inspections (requires project module)
-    settings.cr.shelter_inspection_tasks = True
+    #settings.cr.shelter_inspection_tasks = True
     # Configure active statuses for shelter inspection tasks (subset of project.task_status_opts)
     #settings.cr.shelter_inspection_task_active_statuses = (2, 3, 6)
 
@@ -777,7 +780,7 @@ def config(settings):
     # Uncomment to prevent selecting existing users in the old S3AddPersonWidget
     #settings.pr.select_existing = False
     # Uncomment to prevent showing HR details in S3PersonAutocompleteWidget results
-    settings.pr.search_shows_hr_details = False
+    #settings.pr.search_shows_hr_details = False
     # Uncomment to hide Emergency Contacts in Person Contacts page
     settings.pr.show_emergency_contacts = False
     # Uncomment to hide the Address tab in person details
@@ -805,18 +808,20 @@ def config(settings):
     # Show branches as tree rather than as table
     #settings.org.branches_tree_view = True
     # Make Facility Types Hierarchical
-    #settings.org.facility_types_hierarchical = True
+    settings.org.facility_types_hierarchical = True
     # Enable the use of Organisation Groups & what their name is
     #settings.org.groups = "Coalition"
     settings.org.groups = "Network"
     # Organisation Location context
     #settings.org.organisation_location_context = "organisation_location.location_id"
     # Make Organisation Types Hierarchical
-    #settings.org.organisation_types_hierarchical = True
+    settings.org.organisation_types_hierarchical = True
     # Make Organisation Types Multiple
     #settings.org.organisation_types_multiple = True
     # Show Organisation Types in the rheader
-    settings.org.organisation_type_rheader = True
+    #settings.org.organisation_type_rheader = True
+    # Make Organisation Types Multiple
+    #settings.org.organisation_types_multiple = True
     # Enable the use of Organisation Regions
     #settings.org.regions = True
     # Make Organisation Regions Hierarchical
