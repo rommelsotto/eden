@@ -1613,15 +1613,8 @@ class S3OptionsMenu(object):
         stats = lambda i: settings.has_module("stats")
 
         return M(c="org")(
-<<<<<<< HEAD
-                    M("Who Does What")(
-                        M("Cluster Mapping", f="organisation", m="report"),
-                        M("Service Mapping", f="service_location", m="report"),
-                    ),
-=======
                     M("Who Does What", f="organisation", m="report"),
                     M("Service Mapping", f="service_location", m="report"),
->>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
                     M("Organizations", f="organisation")(
                         M("Create", m="create"),
                         M("Import", m="import", restrict=[ADMIN]),
