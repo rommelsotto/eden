@@ -14,7 +14,10 @@ def config(settings):
     T = current.T
     settings.base.system_name = T("HI Information Management System")
     settings.base.system_name_short = T("HIMS")
+<<<<<<< HEAD
     settings.base.theme_base = "default"
+=======
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
     settings.ui.menu_logo = "/static/themes/HIMS/img/logo_small.png"
 
     # Pre-Populate
@@ -27,7 +30,11 @@ def config(settings):
     # ["default", "default/users"]
     # Unless doing a manual DB migration, where prepopulate = 0
     # In Production, prepopulate = 0 (to save 1x DAL hit every page)
+<<<<<<< HEAD
     settings.base.prepopulate +=("HIMS")
+=======
+    settings.base.prepopulate.append("HIMS")
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
 
     # Uncomment this to prefer scalability-optimized strategies globally
     #settings.base.bigtable = True
@@ -164,7 +171,11 @@ def config(settings):
     # Default Country Code for telephone numbers
     #settings.L10n.default_country_code = 1
     # Make last name in person/user records mandatory
+<<<<<<< HEAD
     #settings.L10n.mandatory_lastname = True
+=======
+    settings.L10n.mandatory_lastname = True
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
     # Configure the list of Religions
     settings.L10n.religions = {"none": T("none"),
                             "christian": T("Christian"),
@@ -364,7 +375,11 @@ def config(settings):
     # 7: Apply Controller, Function, Table ACLs and Entity Realm + Hierarchy
     # 8: Apply Controller, Function, Table ACLs, Entity Realm + Hierarchy and Delegations
     #
+<<<<<<< HEAD
     settings.security.policy = 7
+=======
+    settings.security.policy = 5
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
 
     # Ownership-rule for records without owner:
     # True = not owned by any user (strict ownership, default)
@@ -416,7 +431,11 @@ def config(settings):
     # Enable this to show pivot table options form by default
     #settings.ui.hide_report_options = False
     # Uncomment to show created_by/modified_by using Names not Emails
+<<<<<<< HEAD
     #settings.ui.auth_user_represent = "name"
+=======
+    settings.ui.auth_user_represent = "name"
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
     # Uncomment to control the dataTables layout: https://datatables.net/reference/option/dom
     # Default:
     #settings.ui.datatables_dom = "fril<'dataTable_table't>pi"
@@ -628,7 +647,11 @@ def config(settings):
     # Uncomment to use Tags for Shelters
     #settings.cr.tags = True
     # Uncomment to generate tasks from shelter inspections (requires project module)
+<<<<<<< HEAD
     #settings.cr.shelter_inspection_tasks = True
+=======
+    settings.cr.shelter_inspection_tasks = True
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
     # Configure active statuses for shelter inspection tasks (subset of project.task_status_opts)
     #settings.cr.shelter_inspection_task_active_statuses = (2, 3, 6)
 
@@ -764,7 +787,11 @@ def config(settings):
     # Uncomment to allow person imports to match even without email addresses
     #settings.pr.import_update_requires_email = False
     # Uncomment this to enable support for third gender
+<<<<<<< HEAD
     #settings.pr.hide_third_gender = False
+=======
+    settings.pr.hide_third_gender = False
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
     # Uncomment to a fuzzy search for duplicates in the new AddPersonWidget2
     #settings.pr.lookup_duplicates = True
     # Uncomment to hide fields in S3AddPersonWidget[2]
@@ -778,9 +805,15 @@ def config(settings):
     # Uncomment to prevent selecting existing users in the old S3AddPersonWidget
     #settings.pr.select_existing = False
     # Uncomment to prevent showing HR details in S3PersonAutocompleteWidget results
+<<<<<<< HEAD
     #settings.pr.search_shows_hr_details = False
     # Uncomment to hide Emergency Contacts in Person Contacts page
     #settings.pr.show_emergency_contacts = False
+=======
+    settings.pr.search_shows_hr_details = False
+    # Uncomment to hide Emergency Contacts in Person Contacts page
+    settings.pr.show_emergency_contacts = False
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
     # Uncomment to hide the Address tab in person details
     #settings.pr.use_address = False
     # Show separate Public and Private Contacts Tabs
@@ -806,18 +839,30 @@ def config(settings):
     # Show branches as tree rather than as table
     #settings.org.branches_tree_view = True
     # Make Facility Types Hierarchical
+<<<<<<< HEAD
     settings.org.facility_types_hierarchical = True
+=======
+    #settings.org.facility_types_hierarchical = True
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
     # Enable the use of Organisation Groups & what their name is
     #settings.org.groups = "Coalition"
     settings.org.groups = "Network"
     # Organisation Location context
     #settings.org.organisation_location_context = "organisation_location.location_id"
     # Make Organisation Types Hierarchical
+<<<<<<< HEAD
     settings.org.organisation_types_hierarchical = True
     # Make Organisation Types Multiple
     #settings.org.organisation_types_multiple = True
     # Show Organisation Types in the rheader
     #settings.org.organisation_type_rheader = True
+=======
+    #settings.org.organisation_types_hierarchical = True
+    # Make Organisation Types Multiple
+    #settings.org.organisation_types_multiple = True
+    # Show Organisation Types in the rheader
+    settings.org.organisation_type_rheader = True
+>>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
     # Enable the use of Organisation Regions
     #settings.org.regions = True
     # Make Organisation Regions Hierarchical
