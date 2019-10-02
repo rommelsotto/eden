@@ -840,7 +840,7 @@ def config(settings):
     # Uncomment to hide inv & req tabs from Sites
     settings.org.site_inv_req_tabs = False
     # Uncomment to allow Sites to be staffed by Volunteers
-    settings.org.site_volunteers = True
+    #settings.org.site_volunteers = True
     # Enable certain fields just for specific Organisations
     # Requires a call to settings.set_org_dependent_field(field)
     # empty list => disabled for all (including Admin)
