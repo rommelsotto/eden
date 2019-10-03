@@ -1317,13 +1317,13 @@ def config(settings):
             name_nice = T("Contact Directory"),
             #description = "Human Resources Management",
             restricted = True,
-            module_type = 4,
+            module_type = 2,
         )),
         ("vol", Storage(
             name_nice = T("Volunteer Management"),
             #description = "Human Resources Management",
             restricted = True,
-            module_type = 5,
+            module_type = 10,
         )),
         ("cms", Storage(
             name_nice = T("Content Management"),
@@ -1354,7 +1354,7 @@ def config(settings):
             name_nice = T("Warehouse"),
             #description = "Receiving and Sending Items",
             restricted = True,
-            module_type = 6
+            module_type = 10,
         )),
         #("proc", Storage(
         #        name_nice = T("Procurement"),
@@ -1385,7 +1385,7 @@ def config(settings):
             name_nice = T("Projects"),
             #description = "Tracking of Projects, Activities and Tasks",
             restricted = True,
-            module_type = 3
+            module_type = 6,
         )),
         #("survey", Storage(
         #    name_nice = T("Surveys"),
@@ -1403,13 +1403,13 @@ def config(settings):
             name_nice = T("Camps"),
             #description = "Tracks the location, capacity and breakdown of victims in Shelters",
             restricted = True,
-            module_type = 2
+            module_type = 3,
         )),
         ("hms", Storage(
             name_nice = T("Hospitals"),
             #description = "Helps to monitor status of hospitals",
             restricted = True,
-            module_type = None,
+            module_type = 4,
         )),
         #("disease", Storage(
         #    name_nice = T("Disease Tracking"),
@@ -1417,12 +1417,12 @@ def config(settings):
         #    restricted = True,
         #    module_type = 10
         #)),
-        #("br", Storage(
-        #    name_nice = T("Beneficiary Registry"),
-        #    #description = "Beneficiary Registry and Case Management",
-        #    restricted = True,
-        #    module_type = 10,
-        #)),
+        ("br", Storage(
+            name_nice = T("Case Management"),
+            #description = "Beneficiary Registry and Case Management",
+            restricted = True,
+            module_type = 10,
+        )),
         ("dvr", Storage(
             name_nice = T("Disaster Victim Registry"),
             #description = "Allow affected individuals & households to register to receive compensation and distributions",
@@ -1478,12 +1478,12 @@ def config(settings):
         #   module_type = 10,
         #   #access = "|DVI|",      # Only users with the DVI role can see this module in the default menu & access the controller
         #)),
-        #("edu", Storage(
-        #    name_nice = T("Schools"),
-        #    #description = "Helps to monitor status of schools",
-        #    restricted = True,
-        #    module_type = 10
-        #)),
+        ("edu", Storage(
+            name_nice = T("Schools"),
+            #description = "Helps to monitor status of schools",
+            restricted = True,
+            module_type = 4
+        )),
         #("mpr", Storage(
         #   name_nice = T("Missing Person Registry"),
         #   #description = "Helps to report and search for missing persons",
@@ -1524,7 +1524,7 @@ def config(settings):
            name_nice = T("Security"),
            #description = "Security Management System",
            restricted = True,
-           module_type = 5,
+           module_type = 10,
         )),
         # These are specialist modules
         #("cap", Storage(
