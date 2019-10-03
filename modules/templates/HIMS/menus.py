@@ -26,6 +26,7 @@
     FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
     OTHER DEALINGS IN THE SOFTWARE.
 """
+from boto.gs.acl import ALL_AUTHENTICATED_USERS
 
 __all__ = ("S3MainMenu",
            "S3OptionsMenu",
@@ -1189,46 +1190,46 @@ class S3OptionsMenu(object):
         use_teams = lambda i: teams
         vol_enabled = lambda i: settings.has_module("vol")
 
-        return M(c="hrm")(
+        return M(c="hrm", f="staff", m="summary")(
                     M(settings.get_hrm_staff_label(), f="staff", m="summary")(
                         M("Create", m="create"),
-                        M("Search by Skills", f="competency", check=skills),
+                        M("Search by Skills", f="competency", check=skills, restrict=[ALL_AUTHENTICATED_USERS]),
                         M("Import", f="person", m="import",
                           vars = {"group": "staff"},
                           p = "create",
                           ),
                     ),
-                    M("Staff & Volunteers (Combined)",
-                      c="hrm", f="human_resource", m="summary", check=vol_enabled),
-                    M(teams, f="group", check=use_teams)(
-                        M("Create", m="create"),
-                        M("Search Members", f="group_membership"),
-                        M("Import", f="group_membership", m="import"),
-                    ),
-                    M("Department Catalog", f="department")(
-                        M("Create", m="create"),
-                    ),
-                    M("Job Title Catalog", f="job_title")(
+                    #M("Staff & Volunteers (Combined)",
+                    #  c="hrm", f="human_resource", m="summary", check=vol_enabled),
+                    #M(teams, f="group", check=use_teams)(
+                    #    M("Create", m="create"),
+                    #    M("Search Members", f="group_membership"),
+                    #    M("Import", f="group_membership", m="import"),
+                    #),
+                    M("Department Catalog", f="department", restrict=[ALL_AUTHENTICATED_USERS])(
                         M("Create", m="create"),
                     ),
-                    M("Skill Catalog", f="skill", check=skills)(
+                    M("Job Title Catalog", f="job_title", restrict=[ALL_AUTHENTICATED_USERS])(
+                        M("Create", m="create"),
+                    ),
+                    M("Skill Catalog", f="skill", check=skills, restrict=[ALL_AUTHENTICATED_USERS])(
                         M("Create", m="create"),
                         #M("Skill Provisions", f="skill_provision"),
                     ),
-                    M("Training Events", f="training_event")(
+                    M("Training Events", f="training_event", restrict=[ALL_AUTHENTICATED_USERS])(
                         M("Create", m="create"),
                         M("Search Training Participants", f="training"),
                         M("Import Participant List", f="training", m="import"),
                     ),
-                    M("Training Course Catalog", f="course")(
+                    M("Training Course Catalog", f="course", restrict=[ALL_AUTHENTICATED_USERS])(
                         M("Create", m="create"),
                         #M("Course Certificates", f="course_certificate"),
                     ),
-                    M("Certificate Catalog", f="certificate")(
+                    M("Certificate Catalog", f="certificate", restrict=[ALL_AUTHENTICATED_USERS])(
                         M("Create", m="create"),
                         #M("Skill Equivalence", f="certificate_skill"),
                     ),
-                    M("Reports", f="staff", m="report")(
+                    M("Reports", f="staff", m="report", restrict=[ALL_AUTHENTICATED_USERS])(
                         M("Staff Report", m="report"),
                         M("Expiring Staff Contracts Report",
                           vars = {"expiring": 1},
@@ -1633,13 +1634,13 @@ class S3OptionsMenu(object):
                     #    M("Create", m="create"),
                     #    M("Import", m="import", restrict=[ADMIN]),
                     #),
-                    M("For Admin Use Only")(
-                        M("Organization Type", f="organisation_type", m="summary",restrict=[ADMIN]),
-                        M("Office Type", f="office_type", m="summary", restrict=[ADMIN]),
-                        M("Facility Type", f="facility_type", m="summary"),
-                        M("Resource Type", f="resource_type", m="summary", restrict=[ADMIN]),
-                        M("Services", f="service", m="summary"),
-                        M(SECTORS, f="sector", m="summary", check=use_sectors, restrict=[ADMIN]),
+                    M("For Admin Use Only", restrict=[ALL_AUTHENTICATED_USERS])(
+                        M("Organization Type", f="organisation_type", m="summary",restrict=[ALL_AUTHENTICATED_USERS]),
+                        M("Office Type", f="office_type", m="summary", restrict=[ALL_AUTHENTICATED_USERS]),
+                        M("Facility Type", f="facility_type", m="summary", restrict=[ALL_AUTHENTICATED_USERS]),
+                        M("Resource Type", f="resource_type", m="summary", restrict=[ALL_AUTHENTICATED_USERS]),
+                        M("Services", f="service", m="summary", restrict=[ALL_AUTHENTICATED_USERS]),
+                        M(SECTORS, f="sector", m="summary", check=use_sectors, restrict=[ALL_AUTHENTICATED_USERS]),
                     ),
                 )
 

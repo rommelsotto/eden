@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-Abrv,Name,SubsectorOf
-CCCM,Camp Coordination/Management,
-DRR,Disaster Risk Reduction,
-EDUC,Education,
-ETC,Emergency Telecommunications,
-FS,Food Security,
-HEAL,Health,
-LEGAL,Legal Services,
-LL,Llivelihood,
-LOGS,Logistics,
-MHPSS,Mental Health & PSS,
-NUT,Nutrition,
-PROT,Protection,
-SHEL,Emergency Shelter,
-WASH,Water Sanitation Hygiene,
-=======
 Abrv,Name,SubsectorOf
 EDUC,Education,
 FS,Food Security,
@@ -24,6 +7,9 @@ NUT,Nutrition,
 GBV,Gender Based Violence,
 PROT,Protection,
 CP,Child Protection,
-SMS,Site Management,
+CCCM,Camp Coordination / Camp Management,
 CWC,Communicating with Community,
->>>>>>> 9a2a0b4d7052cb7ae6faf627b06e04137817e1e2
+SHEL,NFI / Shelter,
+LL,Livelihood,
+DRR,Disaster Risk Reduction,
+LOGS,Logistics,

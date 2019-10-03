@@ -2299,17 +2299,17 @@ class S3OrganisationSectorModel(S3Model):
                                           "key": "project_id",
                                           "actuate": "hide",
                                           },
-                       #project_activity_type = {"link": "project_activity_type_sector",
-                       #                         "joinby": "sector_id",
-                       #                         "key": "activity_type_id",
-                       #                         "actuate": "hide",
-                       #                         },
-                       #project_theme = {"link": "project_theme_sector",
-                       #                 "joinby": "sector_id",
-                       #                 "key": "theme_id",
-                       #                 "actuate": "hide",
-                       #                 },
-                       #org_subsector = "sector_id",
+                       project_activity_type = {"link": "project_activity_type_sector",
+                                                "joinby": "sector_id",
+                                                "key": "activity_type_id",
+                                                "actuate": "hide",
+                                                },
+                       project_theme = {"link": "project_theme_sector",
+                                        "joinby": "sector_id",
+                                        "key": "theme_id",
+                                        "actuate": "hide",
+                                        },
+                       org_subsector = "sector_id",
                        )
 
         # =====================================================================
@@ -7075,7 +7075,7 @@ def org_facility_controller():
                             field.readable = False
 
                 elif method == "report":
-                    table.organisation_id.represent = org_OrganisationRepresent() # show_link = False
+                    table.organisation_id.represent = org_OrganisationRepresent() #show_link = False
 
             else:
                 cname = r.component_name

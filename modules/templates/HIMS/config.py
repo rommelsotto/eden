@@ -364,7 +364,6 @@ def config(settings):
     # 6: Apply Controller, Function, Table ACLs and Entity Realm
     # 7: Apply Controller, Function, Table ACLs and Entity Realm + Hierarchy
     # 8: Apply Controller, Function, Table ACLs, Entity Realm + Hierarchy and Delegations
-    #
 
     settings.security.policy = 7
 
@@ -373,7 +372,11 @@ def config(settings):
     # False = owned by any authenticated user
     settings.security.strict_ownership = False
 
-    # Audit
+    """ 
+        ========================================================================================
+        Audit
+        ========================================================================================
+    """
     # - can be a callable for custom hooks (return True to also perform normal logging, or False otherwise)
     # NB Auditing (especially Reads) slows system down & consumes diskspace
     #settings.security.audit_read = True
@@ -873,7 +876,7 @@ def config(settings):
         ========================================================================================
     """
     # Uncomment to change the label for 'Staff'
-    #settings.hrm.staff_label = "Contacts"
+    settings.hrm.staff_label = "Contacts"
     # Uncomment to allow Staff & Volunteers to be registered without an email address
     #settings.hrm.email_required = False
     # Uncomment to allow Staff & Volunteers to be registered without an Organisation
@@ -1311,7 +1314,7 @@ def config(settings):
         )),
         # All modules below here should be possible to disable safely
         ("hrm", Storage(
-            name_nice = T("Human Resource"),
+            name_nice = T("Contact Directory"),
             #description = "Human Resources Management",
             restricted = True,
             module_type = 4,
